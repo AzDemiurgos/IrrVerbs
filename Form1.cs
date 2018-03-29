@@ -17,16 +17,16 @@ namespace IrregularVerbs
     {
         private IrregularVerbTest tester { get; set; }
         private DataGridView dictionary { get; set; }
-        private IrregularVerb[] verbs { get; set; }
+        private List<IrregularVerb> verbs { get; set; }
         public Form1()
         {
             InitializeComponent();
 
-            verbs = new IrregularVerb[] {};
-            DataContractJsonSerializer jsonformatter = new DataContractJsonSerializer(typeof(IrregularVerb[]));
+            verbs = new List<IrregularVerb> { };
+            DataContractJsonSerializer jsonformatter = new DataContractJsonSerializer(typeof(List<IrregularVerb>));
             using (FileStream fs = new FileStream("dictionary.json", FileMode.OpenOrCreate))
             {
-                verbs = (IrregularVerb[])jsonformatter.ReadObject(fs);
+                verbs = (List<IrregularVerb>)jsonformatter.ReadObject(fs);
             }
 
             tester = new IrregularVerbTest(10);
@@ -35,15 +35,19 @@ namespace IrregularVerbs
             tabControl1.TabPages[0].Controls.Add(tester);
 
             dictionary = new DataGridView();
+            dictionary.Size = new Size(500, 500);
             tabControl1.TabPages[1].Controls.Add(dictionary);
-            dictionary.ColumnCount = 4;
+            dictionary.ColumnCount = 6;
             foreach (var verb in verbs)
             {
                 DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dictionary);
                 row.Cells[0].Value = verb.V1;
                 row.Cells[1].Value = verb.V2;
                 row.Cells[2].Value = verb.V3;
                 row.Cells[3].Value = verb.Tr;
+                row.Cells[4].Value = verb.Raiting;
+                row.Cells[5].Value = verb.Sample;
                 dictionary.Rows.Add(row);
             }
             //this.Controls.Add(tester);
@@ -52,9 +56,10 @@ namespace IrregularVerbs
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
-            DataContractJsonSerializer jsonformatter = new DataContractJsonSerializer(typeof(IrregularVerb[]));
+            DataContractJsonSerializer jsonformatter = new DataContractJsonSerializer(typeof(List<IrregularVerb>));
             using (FileStream fs = new FileStream("dictionary.json", FileMode.OpenOrCreate))
             {
+                fs.SetLength(0);
                 jsonformatter.WriteObject(fs, verbs);
             }
         }
