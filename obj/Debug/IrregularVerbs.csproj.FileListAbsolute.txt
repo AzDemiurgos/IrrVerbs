@@ -1,0 +1,10 @@
+E:\Azat\English\Intermediate\irregularverbs\IrregularVerbs\IrregularVerbs\bin\Debug\IrregularVerbs.exe.config
+E:\Azat\English\Intermediate\irregularverbs\IrregularVerbs\IrregularVerbs\obj\Debug\IrregularVerbs.csprojResolveAssemblyReference.cache
+E:\Azat\English\Intermediate\irregularverbs\IrregularVerbs\IrregularVerbs\obj\Debug\IrregularVerbs.Form1.resources
+E:\Azat\English\Intermediate\irregularverbs\IrregularVerbs\IrregularVerbs\obj\Debug\IrregularVerbs.Properties.Resources.resources
+E:\Azat\English\Intermediate\irregularverbs\IrregularVerbs\IrregularVerbs\obj\Debug\IrregularVerbs.src.IrregularVerbTest.resources
+E:\Azat\English\Intermediate\irregularverbs\IrregularVerbs\IrregularVerbs\obj\Debug\IrregularVerbs.csproj.GenerateResource.Cache
+E:\Azat\English\Intermediate\irregularverbs\IrregularVerbs\IrregularVerbs\bin\Debug\IrregularVerbs.exe
+E:\Azat\English\Intermediate\irregularverbs\IrregularVerbs\IrregularVerbs\bin\Debug\IrregularVerbs.pdb
+E:\Azat\English\Intermediate\irregularverbs\IrregularVerbs\IrregularVerbs\obj\Debug\IrregularVerbs.exe
+E:\Azat\English\Intermediate\irregularverbs\IrregularVerbs\IrregularVerbs\obj\Debug\IrregularVerbs.pdb
